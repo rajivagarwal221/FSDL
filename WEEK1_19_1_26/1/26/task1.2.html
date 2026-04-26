@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hall Ticket</title>
+    <link rel="stylesheet" href="../../../Week2_2/2/26/task2.1.css">
+</head>
+<body>
+    <!-- FORM SECTION -->
+    <div class="form-section">
+        <h2>Edit Hall Ticket</h2>
+        
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" value="Rajiv">
+        </div>
+        
+        <div class="form-group">
+            <label for="rollNo">Roll Number:</label>
+            <input type="text" id="rollNo" value="5024101">
+        </div>
+        
+        <div class="form-group">
+            <label for="branch">Branch:</label>
+            <input type="text" id="branch" value="IT">
+        </div>
+        
+        <div class="form-group">
+            <label for="semester">Semester:</label>
+            <input type="text" id="semester" value="4">
+        </div>
+        
+        <div class="form-group">
+            <label for="exam">Exam:</label>
+            <input type="text" id="exam" value="Mid Term 2026">
+        </div>
+        
+        <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="text" id="date" value="January 19, 2026">
+        </div>
+        
+        <div class="form-group">
+            <label for="invigilator">Invigilator:</label>
+            <input type="text" id="invigilator" value="batman">
+        </div>
+        
+        <button onclick="updateTicket()">Update Ticket</button>
+    </div>
+    
+    <!-- TICKET SECTION -->
+    <div class="ticket">
+        <h2>🎓 HALL TICKET</h2>
+        <div class="ticket-header">
+            <p>Examination Admission Card</p>
+            <p id="ticketId">Ticket ID: HT-2026-0001</p>
+        </div>
+        
+        <table>
+            <tr>
+                <th>Field</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>Full Name</td>
+                <td id="displayName">Rajiv</td>
+            </tr>
+            <tr>
+                <td>Roll Number</td>
+                <td id="displayRollNo">5024101</td>
+            </tr>
+            <tr>
+                <td>Branch</td>
+                <td id="displayBranch">IT</td>
+            </tr>
+            <tr>
+                <td>Semester</td>
+                <td id="displaySemester">4</td>
+            </tr>
+            <tr>
+                <td>Examination</td>
+                <td id="displayExam">Mid Term 2026</td>
+            </tr>
+            <tr>
+                <td>Exam Date</td>
+                <td id="displayDate">January 19, 2026</td>
+            </tr>
+            <tr>
+                <td>Invigilator</td>
+                <td id="displayInvigilator">batman</td>
+            </tr>
+        </table>
+        
+        <div class="ticket-photo">
+            <p>📷 Candidate Photo</p>
+            <img src="../../../image/download.jpg" alt="Candidate Photo">
+        </div>
+    </div>
+    
+    <script>
+        // Real-time update as user types
+        document.getElementById('name').addEventListener('keyup', updateTicket);
+        document.getElementById('rollNo').addEventListener('keyup', updateTicket);
+        document.getElementById('branch').addEventListener('keyup', updateTicket);
+        document.getElementById('semester').addEventListener('keyup', updateTicket);
+        document.getElementById('exam').addEventListener('keyup', updateTicket);
+        document.getElementById('date').addEventListener('keyup', updateTicket);
+        document.getElementById('invigilator').addEventListener('keyup', updateTicket);
+
+        function updateTicket() {
+            // Get values from form inputs
+            const name = document.getElementById('name').value || 'N/A';
+            const rollNo = document.getElementById('rollNo').value || 'N/A';
+            const branch = document.getElementById('branch').value || 'N/A';
+            const semester = document.getElementById('semester').value || 'N/A';
+            const exam = document.getElementById('exam').value || 'N/A';
+            const date = document.getElementById('date').value || 'N/A';
+            const invigilator = document.getElementById('invigilator').value || 'N/A';
+            
+            // Update table display with new values
+            document.getElementById('displayName').textContent = name;
+            document.getElementById('displayRollNo').textContent = rollNo;
+            document.getElementById('displayBranch').textContent = branch;
+            document.getElementById('displaySemester').textContent = semester;
+            document.getElementById('displayExam').textContent = exam;
+            document.getElementById('displayDate').textContent = date;
+            document.getElementById('displayInvigilator').textContent = invigilator;
+            
+            // Generate dynamic ticket ID
+            if (rollNo !== 'N/A') {
+                document.getElementById('ticketId').textContent = 'Ticket ID: HT-' + new Date().getFullYear() + '-' + rollNo;
+            }
+        }
+
+        // Initialize on page load
+        window.addEventListener('load', updateTicket);
+    </script>
+    </div>
+</body>
+</html>
+
+
