@@ -4,7 +4,7 @@ Weekly lab work for the Full Stack Development Lab course (roll no. 5024101), fr
 
 | Week | Folder | Topics |
 | --- | --- | --- |
-| 1 | [`WEEK1_19_1_26`](WEEK1_19_1_26) | HTML basics: structure, text, lists, tables, links |
+| 1 | [`WEEK1_19_1_26`](WEEK1_19_1_26) | HTML basics: student registration form, hall ticket (tables, images), links |
 | 2 | [`Week2_2-2-26`](Week2_2-2-26) | CSS styling, ID card layout |
 | 3 | [`WEEK3_9_2-26(bootstrap)`](<WEEK3_9_2-26(bootstrap)>) | Bootstrap: grid and spacing, buttons, forms, navbar and breadcrumbs, jumbotron and colours |
 | 4 | [`WEEK4_16_2_26`](WEEK4_16_2_26) | JavaScript: variables and operators, conditions, loops, functions, classes and objects |
